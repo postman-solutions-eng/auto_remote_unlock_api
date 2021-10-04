@@ -1,0 +1,126 @@
+---
+openapi: 3.0.3
+info:
+  title: Remote Unlock
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: "{{url}}"
+paths:
+  /remote/hood:
+    get:
+      summary: Hood
+      description: |
+        Unlocks and unlatches car hood upon successful execution. 
+        
+        As lock/unlock are core features of the PM connected car experience, this feature is allowed by default in the customer account settings. However, users do have the option to revoke lock/unlock access to APIs and rely only on the key fob. Thus, developers should check for a successful response before continuing with any further workflows.  
+      operationId: hood
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: hood is now open
+              examples:
+                Success:
+                  value:
+                    message: hood is now open
+  /remote/lock:
+    get:
+      summary: Lock
+      description: |
+        Locks all elements upon successful execution. 
+
+        As lock/unlock are core features of the PM connected car experience, this feature is allowed by default in the customer account settings. However, users do have the option to revoke lock/unlock access to APIs and rely only on the key fob. Thus, developers should check for a successful response before continuing with any further workflows.  
+      operationId: lock
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: vehicle is locked
+              examples:
+                Success:
+                  value:
+                    message: vehicle is locked
+  /remote/roof/open:
+    get:
+      summary: Roof/Sunroof
+      description: |
+        Unlocks and opens all sunroof elements upon successful execution. 
+
+        As lock/unlock are core features of the PM connected car experience, this feature is allowed by default in the customer account settings. However, users do have the option to revoke lock/unlock access to APIs and rely only on the key fob. Thus, developers should check for a successful response before continuing with any further workflows.  
+      operationId: roofSunroof
+      responses:
+        "200":
+          description: Success - Close
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: sun/roof is now closed
+              examples:
+                Success - Close:
+                  value:
+                    message: sun/roof is now closed
+  /remote/trunk:
+    get:
+      summary: Trunk Release
+      description: |
+        Unlocks and opens trunk latch upon successful execution. 
+
+        As lock/unlock are core features of the PM connected car experience, this feature is allowed by default in the customer account settings. However, users do have the option to revoke lock/unlock access to APIs and rely only on the key fob. Thus, developers should check for a successful response before continuing with any further workflows.  
+     
+      operationId: trunkRelease
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: trunk is now open
+              examples:
+                Success:
+                  value:
+                    message: trunk is now open
+  /remote/unlock:
+    get:
+      summary: Unlock
+      description: |
+        Unlocks all elements upon successful execution. 
+
+        As lock/unlock are core features of the PM connected car experience, this feature is allowed by default in the customer account settings. However, users do have the option to revoke lock/unlock access to APIs and rely only on the key fob. Thus, developers should check for a successful response before continuing with any further workflows.  
+      operationId: unlock
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: vehicle is unlocked
+              examples:
+                Success:
+                  value:
+                    message: vehicle is unlocked
+tags: []
