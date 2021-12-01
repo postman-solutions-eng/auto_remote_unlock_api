@@ -18,6 +18,5 @@ jobs:
       - uses: actions/checkout@master
       - uses: matt-ball/newman-action@master
         with:
-          apiKey: ${{ secrets.postmanApiKey }}
           collection: postman/collections/Remote Unlock_3de9304e-2c44-481a-afcb-c5708589f6c7.json
           environment: postman/environments/remote-unlock.json
