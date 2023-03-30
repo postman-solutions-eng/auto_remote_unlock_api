@@ -123,6 +123,6 @@ paths:
                 Success:
                   value:
                     message: vehicle is unlocked
-security:
-  - ApiKey: []
 tags: []
+security:
+    - testAuth : []
