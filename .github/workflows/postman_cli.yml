@@ -12,7 +12,7 @@ jobs:
             curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
       - run:
           name: Login using your API key
-          command: postman login --with-api-key $POSTMAN_API_KEY
+          command: postman login --with-api-key $REMOTE_UNLOCK_KEY
       - run: |
             postman collection run "postman/collections/Remote Unlock_a53ae6c5-c079-44e6-8555-cd1f96ecac7b.json" -e "16871416-03fd5ae1-77be-471a-a57c-22c25fd3fbe4" --integration-id "104172-${CIRCLE_WORKFLOW_JOB_ID}"
       - run:
