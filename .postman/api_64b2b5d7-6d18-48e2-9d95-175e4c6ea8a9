@@ -15,7 +15,6 @@ rootDirectory = postman/collections
 
 [config.relations.apiDefinition]
 rootDirectory = postman
-files[] = {"path":"environments/remote-unlock.json","metaData":{}}
 files[] = {"path":"schema.yaml","metaData":{}}
 files[] = {"path":"schemas/schema.yaml","metaData":{}}
 
