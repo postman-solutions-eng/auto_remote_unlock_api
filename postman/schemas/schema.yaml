@@ -123,7 +123,15 @@ paths:
                 Success:
                   value:
                     message: vehicle is unlocked
+components:
+  securitySchemes:
+    testAuth:
+      type: http
+      scheme: basic
+  schemas:
+    AutoEntryStatus:
+      type: object
 tags: []
-security:
-    - testAuth: []
-
+# COMMENT OUT THE FOLLOWING TWO LINES TO DEMO ERRORS AND WARNINGS
+security: 
+    - testAuth : []
