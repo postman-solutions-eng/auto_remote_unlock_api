@@ -14,7 +14,7 @@ jobs:
           name: Login using your API key
           command: postman login --with-api-key $REMOTE_UNLOCK_KEY
       - run: |
-            postman collection run "postman/collections/Remote Unlock_a53ae6c5-c079-44e6-8555-cd1f96ecac7b.json" -e "16871416-03fd5ae1-77be-471a-a57c-22c25fd3fbe4" --integration-id "104172-${CIRCLE_WORKFLOW_JOB_ID}"
+            postman collection run "postman/collections/Remote Unlock_8284d639-f491-42db-8832-27b6d4b38112.json" -e "16871416-03fd5ae1-77be-471a-a57c-22c25fd3fbe4" --integration-id "104172-${CIRCLE_WORKFLOW_JOB_ID}"
       - run:
           name: Lint your API using Postman CLI
           command: postman api lint --integration-id 104172
