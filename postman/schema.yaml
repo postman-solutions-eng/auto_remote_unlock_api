@@ -3,7 +3,11 @@ openapi: 3.0.3
 info:
   title: Remote Unlock
   version: 1.0.0
-  contact: {}
+  contact: 
+    name: Example Support
+    email: support@example.com
+    url: support.example.com
+  description: An API to remotely lock and unlock your automobile
 servers:
   - url: "{{url}}"
 paths:
@@ -21,6 +25,7 @@ paths:
           content:
             application/json:
               schema:
+                $ref: '#/components/schemas/AutoEntryStatus'
                 type: object
                 properties:
                   message:
@@ -30,6 +35,8 @@ paths:
                 Success:
                   value:
                     message: hood is now open
+        500: 
+          description: Internal server error
   /remote/lock:
     get:
       summary: Lock
@@ -44,6 +51,7 @@ paths:
           content:
             application/json:
               schema:
+                $ref: '#/components/schemas/AutoEntryStatus'
                 type: object
                 properties:
                   message:
@@ -53,6 +61,8 @@ paths:
                 Success:
                   value:
                     message: vehicle is locked
+        500: 
+          description: Internal server error
   /remote/roof/open:
     get:
       summary: Roof/Sunroof
@@ -67,6 +77,7 @@ paths:
           content:
             application/json:
               schema:
+                $ref: '#/components/schemas/AutoEntryStatus'
                 type: object
                 properties:
                   message:
@@ -76,6 +87,8 @@ paths:
                 Success - Close:
                   value:
                     message: sun/roof is now closed
+        500: 
+          description: Internal server error
   /remote/trunk:
     get:
       summary: Trunk Release
@@ -91,6 +104,7 @@ paths:
           content:
             application/json:
               schema:
+                $ref: '#/components/schemas/AutoEntryStatus'
                 type: object
                 properties:
                   message:
@@ -100,6 +114,8 @@ paths:
                 Success:
                   value:
                     message: trunk is now open
+        500: 
+          description: Internal server error
   /remote/unlock:
     get:
       summary: Unlock
@@ -114,6 +130,7 @@ paths:
           content:
             application/json:
               schema:
+                $ref: '#/components/schemas/AutoEntryStatus'
                 type: object
                 properties:
                   message:
@@ -123,6 +140,17 @@ paths:
                 Success:
                   value:
                     message: vehicle is unlocked
-security:
-  - ApiKey: []
+        500: 
+          description: Internal server error
+components:
+  securitySchemes:
+    testAuth:
+      type: http
+      scheme: basic
+  schemas:
+    AutoEntryStatus:
+      type: object
 tags: []
+# COMMENT OUT THE FOLLOWING TWO LINES TO DEMO ERRORS AND WARNINGS
+security: 
+    - testAuth : []

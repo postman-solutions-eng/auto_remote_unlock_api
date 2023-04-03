@@ -124,3 +124,6 @@ paths:
                   value:
                     message: vehicle is unlocked
 tags: []
+security:
+    - testAuth: []
+
