@@ -9,7 +9,7 @@ id = 64b2b5d7-6d18-48e2-9d95-175e4c6ea8a9
 
 [config.relations.collections]
 rootDirectory = postman/collections
-files[] = {"id":"24113284-8284d639-f491-42db-8832-27b6d4b38112","path":"Remote Unlock_a53ae6c5-c079-44e6-8555-cd1f96ecac7b.json","metaData":{}}
+files[] = {"id":"24113284-71bd6c4a-29b0-4d37-ae9d-7823915ed127","path":"Remote Unlock.json","metaData":{}}
 
 [config.relations.collections.metaData]
 
