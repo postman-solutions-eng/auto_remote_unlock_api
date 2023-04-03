@@ -1,0 +1,26 @@
+version: 2.1
+
+jobs:
+  automated-api-tests:
+    docker:
+      - image: cimg/base:2021.04
+    steps:
+      - checkout
+      - run:
+          name: Install Postman CLI
+          command: |
+            curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+      - run:
+          name: Login using your API key
+          command: postman login --with-api-key $REMOTE_UNLOCK_KEY
+      - run: |
+            postman collection run "postman/collections/Remote Unlock.json" -e "16871416-03fd5ae1-77be-471a-a57c-22c25fd3fbe4" --integration-id "104172-${CIRCLE_WORKFLOW_JOB_ID}"
+      - run:
+          name: Lint your API using Postman CLI
+          command: postman api lint --integration-id 104172
+
+workflows:
+  version: 2
+  automated-api-tests:
+    jobs:
+      - automated-api-tests
